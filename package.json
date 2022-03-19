@@ -1,0 +1,14 @@
+{
+  "name": "easy-graph",
+  "version": "1.0.0",
+  "description": "基于React的开源可拖拽图渲染库。",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "graph"
+  ],
+  "author": "gray-rabbit",
+  "license": "ISC"
+}
