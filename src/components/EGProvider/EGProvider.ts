@@ -10,7 +10,7 @@ const EGProvider = () => {
                 ...registerItem,
                 setRegisterItem
             }}>
-    </Register.Provider>
+        </Register.Provider>
     )
 }
 export { Register };

@@ -1,4 +1,4 @@
-import { Register } from "../components/EGContext/EGContext";
+import { Register } from "../components/EGProvider/EGProvider";
 import { useContext } from 'react';
 import { CustomElement } from "../typings/Custom";
 
