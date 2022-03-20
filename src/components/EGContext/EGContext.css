@@ -1,0 +1,5 @@
+.contextBox {
+  display: inline-block;
+  position: absolute;
+  cursor: move;
+}
