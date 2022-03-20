@@ -1,12 +1,9 @@
-export interface CustomNode<T>{
+export interface CustomNodeProps<T={}>{
     nodeId:string;
-    nodeType:string;
-    position:[number,number];
-    data?:T;
+    data:T;
 }
-export interface CustomEdge<T>{
+export interface CustomEdgeProps<T={}>{
     edgeId:string;
-    edgeType:string;
     startEndPosition:[number,number,number,number];
-    data?:T;
+    data:T;
 }
