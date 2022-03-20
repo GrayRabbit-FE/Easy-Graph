@@ -8,17 +8,22 @@ export interface EdgeProps{
     edgeId:string;
     edgeType:string;
     startEndNodeId:[string,string];
+    startEndNode?:[NodeProps,NodeProps];
     data?:any;
 }
 
-export interface EGContextProps {
+export interface GraphRenderProps {
+    edges?:EdgeProps[];
+    nodes?:NodeProps[];
+}
+ 
+export type EGContextProps = {
     options?:{
         zoomable:boolean;
         scrollable:boolean;
     };
-    edges?:EdgeProps[];
-    nodes?:NodeProps[];
-}
+} & GraphRenderProps;
 
 export type Edge = React.FC<EdgeProps>;
 export type Node = React.FC<NodeProps>;
+
