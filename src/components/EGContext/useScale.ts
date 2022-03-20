@@ -5,7 +5,7 @@ export const useScale = () => {
 
   const handleScroll = (e: any) => {
     if (
-      (e.nativeEvent.deltaY < 0 && scale >= 3) ||
+      (e.nativeEvent.deltaY < 0 && scale >= 5) ||
       (e.nativeEvent.deltaY > 0 && scale <= 0.5)
     ) {
       return;

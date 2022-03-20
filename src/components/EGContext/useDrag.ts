@@ -20,10 +20,14 @@ export const useDrag = () => {
     setTrans({ x: e.clientX - diff.x, y: e.clientY - diff.y });
   };
 
+  const handleMouseUp = () => {
+    setIsMoving(false);
+  };
+
   return {
     trans,
     handleMouseDown,
     handleMouseMove,
-    setIsMoving
+    handleMouseUp
   };
 };
