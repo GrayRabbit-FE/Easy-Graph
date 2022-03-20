@@ -1,24 +1,19 @@
-import React, { createContext, useState } from "react"
+import React from "react"
 import { EGContextProps } from "../../typings/Components";
-import { RegisterProps } from "../../typings/Custom";
-
-const Register = createContext<RegisterProps>({});
 
 const EGContext:React.FC<EGContextProps> = ({
-    children,
     nodes,
     edges,
     options
 })=>{
-    const [registerItem,setRegisterItem] = useState<RegisterProps>({});
     return (
-        <Register.Provider 
-            value={{
-                ...registerItem,
-                setRegisterItem
-            }}>
-        </Register.Provider>
+        //todo: 给这个div加上缩放，移动能力
+        <div>
+        {
+            
+        }
+        </div>
     )
 }
-export  { Register }
+
 export default EGContext;
