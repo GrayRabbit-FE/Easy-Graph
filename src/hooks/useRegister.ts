@@ -6,7 +6,7 @@ function useRegister() {
     const register = (customElementName: string, customElement: CustomElement) => {
         const rigisterContext = useContext(Register);
         const { setRegisterItem } = rigisterContext;
-        setRegisterItem({
+        setRegisterItem!({
             ...rigisterContext,
             [customElementName]: customElement
         });

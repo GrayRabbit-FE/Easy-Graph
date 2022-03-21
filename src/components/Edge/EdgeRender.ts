@@ -16,17 +16,15 @@ const EdgeRender: Edge = ({
 
     const startEndPosition: [number, number, number, number] =
         [
-            ...startEndNode[0].position,
-            ...startEndNode[1].position
+            ...startEndNode![0].position,
+            ...startEndNode![1].position
         ];
     return (
         <>
             <CustomEdgeFC
-                {...{
-                    edgeId,
-                    data,
-                    startEndPosition
-                }}
+                edgeId={edgeId}
+                data={data}
+                startEndPosition={startEndPosition}
             >
             </CustomEdgeFC>
         </>

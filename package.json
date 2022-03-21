@@ -1,13 +1,17 @@
 {
     "name": "easy-graph",
-    "version": "1.0.0",
+    "version": "1.0.4",
     "description": "基于React的开源可拖拽图渲染库。",
-    "main": "index.js",
+    "main": "src/index.ts",
     "scripts": {
-        "test": "test"
+        "test": "test",
+        "build": "webpack"
     },
     "keywords": [
-        "graph"
+        "graph",
+        "react",
+        "drag",
+        "drop"
     ],
     "author": "gray-rabbit",
     "license": "ISC",
@@ -16,6 +20,10 @@
         "react-dom": "^17.0.2"
     },
     "devDependencies": {
-        "@types/react": "^17.0.41"
+        "@babel/core": "^7.17.8",
+        "@types/react": "^17.0.41",
+        "babel-loader": "^8.2.3",
+        "babel-preset-env": "^1.7.0",
+        "typescript": "^4.6.2"
     }
 }
