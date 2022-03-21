@@ -13,5 +13,5 @@ export type CustomEdge<T={}> = React.FC<CustomEdgeProps<T>>;
 export type CustomElement<T={}> =  CustomNode<T> | CustomEdge<T>
 export interface RegisterProps {    
     setRegisterItem?: React.Dispatch<React.SetStateAction<RegisterProps>>;
-    [props:string]:CustomElement | React.Dispatch<React.SetStateAction<RegisterProps>>;
+    [props:string]:CustomElement | React.Dispatch<React.SetStateAction<RegisterProps>>|undefined;
 }

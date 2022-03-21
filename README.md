@@ -19,7 +19,7 @@
 **安装：**
 
 ```shell
-npm i Easy-Graph
+npm i easy-graph
 ```
 
 **快速开始:**

@@ -1,0 +1,11 @@
+.graph-render-container {
+    position: relative;
+}
+
+.graph-render-edges+* {
+    position: absolute;
+}
+
+.graph-render-nodes+* {
+    position: absolute;
+}
