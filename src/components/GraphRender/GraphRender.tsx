@@ -1,8 +1,8 @@
 import React from 'react';
 import { GraphRenderProps, NodeProps } from "../../typings/Components";
-import EdgeRender from "../Edge/Edge";
+import EdgeRender from "../Edge/EdgeRender";
 import useNodeMap from "../../hooks/useNodeMap";
-import NodeRender from "../Node/Node";
+import NodeRender from "../Node/NodeRender";
 
 const GraphRender: React.FC<GraphRenderProps> = ({
     nodes,

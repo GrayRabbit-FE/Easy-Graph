@@ -1,4 +1,5 @@
 import React, { useContext, useMemo } from 'react';
+import { useRegister } from '../../index';
 import { Edge } from '../../typings/Components';
 import { CustomEdge } from '../../typings/Custom';
 import { Register } from '../EGProvider/EGProvider';
@@ -10,8 +11,8 @@ const EdgeRender: Edge = ({
 }) => {
 
     const CustomEdgeFC: CustomEdge<any> = useMemo(() => {
-        const rigesterContext = useContext(Register);
-        return rigesterContext[edgeType] as CustomEdge;
+        const getEdge = useRegister();
+        return getEdge(edgeType) as CustomEdge;
     }, [])
 
     const startEndPosition: [number, number, number, number] =

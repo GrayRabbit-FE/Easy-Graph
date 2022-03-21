@@ -3,21 +3,19 @@ module.exports = {
     entry: './src/index.ts',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'index.js'
+        filename: 'index.js',
+        libraryTarget: 'umd',
     },
     mode: 'development',
     resolve: {
-        extensions: ['.js', '.css', '.ts']
+        extensions: ['.js', '.css', 'ts', '.tsx']
     },
     module: {
         rules: [{
-                test: /(\.jsx|\.tsx|\.ts)$/,
+                test: /(\.tsx)$/,
                 exclude: /(node_modules)/,
                 use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['env', 'react']
-                    }
+                    loader: 'ts-loader',
                 }
             },
             {
