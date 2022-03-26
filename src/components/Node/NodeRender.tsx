@@ -1,26 +1,69 @@
 import React, { useContext, useMemo } from 'react';
-import { Node } from '../../typings/Components';
+import { useRegister } from '../../index';
+import {  EGDataContextProps, Node, NodeProps } from '../../typings/Components';
 import { CustomNode } from '../../typings/Custom';
+import { EGDataContext } from '../EGContext/EGContext';
 import { Register } from '../EGProvider/EGProvider';
-const NodeRender: Node = ({
-    nodeId,
-    nodeType,
-    data
-}) => {
+const NodeRender: Node = ({node}) => {
+    const {
+        nodeId,
+        nodeType,
+        data,
+        position,
+    } = node;
 
-    const CustomNodeFC: CustomNode<any> = useMemo(() => {
-        const rigesterContext = useContext(Register);
-        return rigesterContext[nodeType] as CustomNode;
-    }, []);
+    const {
+        nodesData,
+        setNodesData,
+        edgesData,
+        setEdgesData
+    } = useContext<EGDataContextProps>(EGDataContext);
 
+    const CustomNodeFC: CustomNode<any> = useRegister(nodeType);
+
+
+    const handleDragStart: React.DragEventHandler<HTMLDivElement> = (event) => {
+        console.log('start');
+    }
+
+    const handleDrag: React.DragEventHandler<HTMLDivElement> = (event) => {
+        const [x, y] = position;
+
+        node.position = [
+            x + event.nativeEvent.offsetX,
+            y + event.nativeEvent.offsetY
+        ];
+
+        setNodesData!({ ...nodesData as NodeProps[] });
+    }
+
+    const handleDragEnd: React.DragEventHandler<HTMLDivElement> = (event) => {
+        const [x, y] = position;
+
+        node.position = [
+            x + event.nativeEvent.offsetX,
+            y + event.nativeEvent.offsetY
+        ];
+
+        setNodesData!({ ...nodesData as NodeProps[] });
+    }
     return (
-        <>
+        <div
+            draggable={true}
+            onDragStart={handleDragStart}
+            onDrag={handleDrag}
+            onDragEnd={handleDragEnd}
+            style={{
+                position: 'absolute',
+                transform: `translate(${position[0]}px, ${position[1]}px)`
+            }}
+        >
             <CustomNodeFC
                 nodeId={nodeId}
                 data={data}
             >
             </CustomNodeFC>
-        </>
+        </div>
     );
 
 }

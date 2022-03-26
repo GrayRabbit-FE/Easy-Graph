@@ -1,15 +1,12 @@
-import { Register } from "../components/EGProvider/EGProvider";
-import { useContext, useMemo } from 'react';
+import { useMemo } from 'react';
 import { CustomElement } from "../typings/Custom";
 
-function useRegister(customElementName?: string, customElement?: CustomElement) {
+function useRegister(customElementName: string, customElement?: CustomElement) {
     const map = useMemo(()=>new Map,[]);
-    if(customElementName)
+    if(customElement)
         map.set(customElementName,customElement);
-    return (customElementName:string)=>{
+    else
         return map.get(customElementName);
-    }
-    
 }
 
 export default useRegister;

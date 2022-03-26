@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GraphRenderProps, NodeProps } from "../../typings/Components";
 import EdgeRender from "../Edge/EdgeRender";
 import useNodeMap from "../../hooks/useNodeMap";
 import NodeRender from "../Node/NodeRender";
-
+import './GraphRender.css'
 const GraphRender: React.FC<GraphRenderProps> = ({
     nodes,
     edges
@@ -17,17 +17,9 @@ const GraphRender: React.FC<GraphRenderProps> = ({
         <div className='graph-render-container'>
             <div className="graph-render-nodes">
                 {
-                    nodes?.map(({
-                        nodeId,
-                        nodeType,
-                        position,
-                        data
-                    }) => {
+                    nodes?.map((node) => {
                         <NodeRender
-                            nodeId={nodeId}
-                            data={data}
-                            nodeType={nodeType}
-                            position={position}
+                            node={node}
                         />
                     })
                 }

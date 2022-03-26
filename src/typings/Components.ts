@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface NodeProps{
     nodeType:string;
     nodeId:string;
@@ -11,7 +13,12 @@ export interface EdgeProps{
     startEndNode?:[NodeProps,NodeProps];
     data?:any;
 }
-
+export interface EGDataContextProps{
+    edgesData?: EdgeProps[];
+    setEdgesData?: Dispatch<SetStateAction<EdgeProps[] | undefined>>; 
+    nodesData?: NodeProps[];
+    setNodesData?: Dispatch<SetStateAction<NodeProps[] | undefined>>; 
+}
 export interface GraphRenderProps {
     edges?:EdgeProps[];
     nodes?:NodeProps[];
@@ -25,5 +32,5 @@ export type EGContextProps = {
 } & GraphRenderProps;
 
 export type Edge = React.FC<EdgeProps>;
-export type Node = React.FC<NodeProps>;
+export type Node = React.FC<{node:NodeProps}>;
 
