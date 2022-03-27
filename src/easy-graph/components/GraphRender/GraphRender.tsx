@@ -6,21 +6,23 @@ import NodeRender from "../Node/NodeRender";
 import './GraphRender.css'
 const GraphRender: React.FC<GraphRenderProps> = ({
     nodes,
-    edges
+    edges,
 }) => {
-
+    
     const [nodeMap, { get: getNode }] = useNodeMap<string, NodeProps>(nodes?.reduce((prev, node) => {
         return prev.set(node.nodeId, node);
     }, new Map));
 
+    
     return (
         <div className='graph-render-container'>
             <div className="graph-render-nodes">
                 {
                     nodes?.map((node) => {
-                        <NodeRender
+                      return( <NodeRender
+                            key={node.nodeId}
                             node={node}
-                        />
+                        /> )
                     })
                 }
             </div>
@@ -34,11 +36,14 @@ const GraphRender: React.FC<GraphRenderProps> = ({
                     }) => {
                         const startEndNode: [NodeProps, NodeProps] =
                             [
-                                getNode(startEndNodeId[0])as NodeProps,
-                                getNode(startEndNodeId[1])as NodeProps
+                                getNode(startEndNodeId[0]) as NodeProps,
+                                getNode(startEndNodeId[1]) as NodeProps
                             ];
+
+
                         return (
                             <EdgeRender
+                                key={edgeId}
                                 edgeId={edgeId}
                                 edgeType={edgeType}
                                 startEndNodeId={startEndNodeId}
