@@ -1,4 +1,4 @@
-import { CustomElement } from "easy-graph/typings/Custom";
+import { CustomElement } from "./Custom";
 import { Dispatch, SetStateAction } from "react";
 import { CustomEdge, CustomNode } from "./Custom";
 

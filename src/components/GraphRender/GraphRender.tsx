@@ -3,7 +3,7 @@ import { GraphRenderProps, NodeProps } from "../../typings/Components";
 import EdgeRender from "../Edge/EdgeRender";
 import useNodeMap from "../../hooks/useNodeMap";
 import NodeRender from "../Node/NodeRender";
-import './GraphRender.css'
+import 'easy-graph/components/GraphRender/GraphRender.css'
 const GraphRender: React.FC<GraphRenderProps> = ({
     nodes,
     edges,

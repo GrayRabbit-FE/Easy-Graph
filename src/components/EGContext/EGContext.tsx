@@ -2,7 +2,7 @@ import React, { createContext, useState } from 'react';
 import { EGContextProps, EGDataContextProps } from '../../typings/Components';
 import { useDrag } from './useDrag';
 import { useScale } from './useScale';
-import './EGContext.css';
+import 'easy-graph/components/EGContext/EGContext.css';
 import GraphRender from '../GraphRender/GraphRender';
 import useRegister from '../../hooks/useRegister';
 export const EGDataContext = createContext<EGDataContextProps>({});
