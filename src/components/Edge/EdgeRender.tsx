@@ -9,7 +9,7 @@ const EdgeRender: Edge = ({
     data
 }) => {
 
-    const CustomEdgeFC: CustomEdge<any> = useRegister(edgeType);
+    const CustomEdgeFC: CustomEdge<any> = useRegister(edgeType) as CustomEdge<any>;
 
 
     const startEndPosition: [number, number, number, number] =

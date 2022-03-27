@@ -1,4 +1,6 @@
+import { CustomElement } from "./Custom";
 import { Dispatch, SetStateAction } from "react";
+import { CustomEdge, CustomNode } from "./Custom";
 
 export interface NodeProps{
     nodeType:string;
@@ -29,6 +31,9 @@ export type EGContextProps = {
         zoomable:boolean;
         scrollable:boolean;
     };
+    regist?:{
+        [props:string]:CustomElement<any>
+    }
 } & GraphRenderProps;
 
 export type Edge = React.FC<EdgeProps>;

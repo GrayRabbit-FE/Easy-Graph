@@ -8,11 +8,14 @@ export const useDrag = () => {
   const [diff, setDiff] = useState(() => ({ x: 0, y: 0 }));
 
   const handleMouseDown = (e: any) => {
+    
+    if(e.nativeEvent.target.className !== 'contextBox') return;
     setIsMoving(true);
     const difX = e.clientX - trans.x;
     const difY = e.clientY - trans.y;
     setDiff({ x: difX, y: difY });
     setPointer({ x: e.clientX, y: e.clientY });
+
   };
 
   const handleMouseMove = (e: any) => {

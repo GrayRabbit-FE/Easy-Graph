@@ -19,11 +19,10 @@ const NodeRender: Node = ({node}) => {
         setEdgesData
     } = useContext<EGDataContextProps>(EGDataContext);
 
-    const CustomNodeFC: CustomNode<any> = useRegister(nodeType);
-
-
+    const CustomNodeFC: CustomNode<any> = useRegister(nodeType) as CustomNode<any>;
+    
     const handleDragStart: React.DragEventHandler<HTMLDivElement> = (event) => {
-        console.log('start');
+        event.dataTransfer.setDragImage(new Image,0,0);
     }
 
     const handleDrag: React.DragEventHandler<HTMLDivElement> = (event) => {
@@ -33,8 +32,8 @@ const NodeRender: Node = ({node}) => {
             x + event.nativeEvent.offsetX,
             y + event.nativeEvent.offsetY
         ];
-
-        setNodesData!({ ...nodesData as NodeProps[] });
+        
+        setNodesData!([...nodesData as NodeProps[]]);
     }
 
     const handleDragEnd: React.DragEventHandler<HTMLDivElement> = (event) => {
@@ -45,7 +44,7 @@ const NodeRender: Node = ({node}) => {
             y + event.nativeEvent.offsetY
         ];
 
-        setNodesData!({ ...nodesData as NodeProps[] });
+        setNodesData!([...nodesData as NodeProps[]]);
     }
     return (
         <div
